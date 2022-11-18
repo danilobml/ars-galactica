@@ -1,10 +1,10 @@
 <template>
-    <div class="bg-burcuGray">
+    <div class="navbar bg-transparent sticky shadow-lg">
       <nav
         class="
           container
-          px-6
-          py-2
+          px-4
+          pt-2
           mx-auto
           md:flex md:justify-between md:items-center
         "
@@ -12,7 +12,7 @@
         <div class="flex items-center justify-between">
           <NuxtLink
             to="/"
-            ><img width="200" src="/images/logo.png" alt="Ars Galactica logo">
+            ><img width="150" src="/images/Burcu_logo.png" alt="Ars Galactica logo">
           </NuxtLink>
           <!-- Mobile menu button -->
           <div @click="toggleNav" class="flex md:hidden">
@@ -44,12 +44,12 @@
             md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0
           "
         >
-          <li class="text-white-100 hover:text-indigo-400"><NuxtLink to="/">Home</NuxtLink></li>
-          <li class="text-white-100 hover:text-indigo-400"><NuxtLink to="/about">About</NuxtLink></li>
-          <li class="text-white-100 hover:text-indigo-400" v-if="auth.isAuthenticated"><NuxtLink to="/profile">Profile</NuxtLink></li>
-          <li class="text-white-100 hover:text-indigo-400" v-if="auth.isAuthenticated"><NuxtLink to="/cart">Cart</NuxtLink></li>
-          <li class="text-white-100 hover:text-indigo-400" v-if="auth.isAuthenticated"><span @click="logout">Logout</span></li>
-          <li class="text-white-100 hover:text-indigo-400" v-else><NuxtLink to="/login">Login</NuxtLink></li>
+          <li class="font-bold hover:text-indigo-400"><NuxtLink to="/">Home</NuxtLink></li>
+          <li class="font-bold hover:text-indigo-400"><NuxtLink to="/about">My Bio</NuxtLink></li>
+          <li class="font-bold hover:text-indigo-400" v-if="auth.isAuthenticated"><NuxtLink to="/profile">User</NuxtLink></li>
+          <li class="font-bold hover:text-indigo-400" v-if="auth.isAuthenticated"><NuxtLink to="/cart"><div class="flex"><img src="/images/cart-icon.png" alt="cart icon"> ({{cart.length}})</div></NuxtLink></li>
+          <li class="font-bold hover:text-indigo-400" v-if="auth.isAuthenticated"><span @click="logout">Logout</span></li>
+          <li class="font-bold hover:text-indigo-400" v-else><NuxtLink to="/login">Login</NuxtLink></li>
         </ul>
       </nav>
     </div>
@@ -57,6 +57,8 @@
 
   <script setup>
     const auth = useAuth()
+
+    const cart = useCart()
 
     let showMenu = ref(false);
 
@@ -69,3 +71,9 @@
     }
 
   </script>
+
+<style>
+  .navbar {
+    box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.25)
+  }
+</style>

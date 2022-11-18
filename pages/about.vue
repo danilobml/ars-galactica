@@ -1,8 +1,13 @@
 <template>
-    <div class="container flex flex-col m-12">
-        <h1 class="text-white text-5xl mb-4">Nice to meet you, I'm Burcu Ersoy!</h1>
-        <p class="text-white text-xl text-justify mb-4">Painting and science, two of my greatest passions in life!</p>
-        <p class="text-white text-3xl text-justify">Welcome to my world of art and stars! i was born in Trabizon, Turkey, and Graduated in Molecular Biology, and I'm currently finishing my PhD in neurobiology at the Charité Medical School in Berlin. Painting, especially astronomical themes, such as stars, supernovas and blackholes, is what moves my artistic heart. I hope it inspires you too!</p>
+    <div class="container flex m-12">
+        <div class="flex mt-12">
+            <img src="/images/Burcu.jpg" width=300 alt="My picture">
+            <div class="flex flex-col ml-10">
+                <h1 class="text-black text-3xl my-4 font-bold">Nice to meet you, I'm Burcu Ersoy!</h1>
+                <p class="text-black text-xl text-justify mb-4 p-5">Painting and science, two of my greatest passions in life!</p>
+                <p class="text-black text-2xl text-justify pr-7">Welcome to my world of art and stars! I was born in Turkey, Graduated in Molecular Biology and I'm currently a PhD candidate in neurobiology at the Charité Medical School in Berlin. Painting, especially scientific and astronomical themes, such as stars, supernovas and blackholes, as well as music and culture, are what move my artistic heart. I hope they inspire you too!</p>
+            </div>
+        </div>
     </div>
 </template>
 

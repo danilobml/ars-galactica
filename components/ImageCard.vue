@@ -3,7 +3,7 @@
         <div class="wrapper bg-gray-400 antialiased text-gray-900">
 <div>
     
-    <img src="https://source.unsplash.com/random/350x350" alt=" random imgee" class="w-full object-cover object-center rounded-lg shadow-md">    
+    <img :src="`/images/${props.image}.jpg`" :alt="`${props.image}`" class="w-full object-cover object-center rounded-lg shadow-md">    
     
  <div class="relative px-4 -mt-16  ">
    <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -16,7 +16,7 @@
   </div>  
     </div>
     
-    <h4 class="mt-1 text-xl font-semibold uppercase leading-tight truncate">A random Title</h4>
+    <h4 class="mt-1 text-xl font-semibold uppercase leading-tight truncate">{{image.title}}</h4>
  
   <div class="mt-1">
     $1800
@@ -38,6 +38,7 @@
     const props =  defineProps({
       image: String,
    })
+//    const title = props.value.image.replaceAll("_", " ")
 </script>
 
 <style scoped>
