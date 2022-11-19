@@ -41,7 +41,7 @@
             flex-col
             mt-8
             space-y-4
-            md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0
+            md:flex md:space-y-0 md:flex-row sm:items-center md:space-x-10 md:mt-0
           "
         >
           <li class="font-bold hover:text-indigo-400"><NuxtLink to="/">Home</NuxtLink></li>
@@ -62,8 +62,8 @@
 
     let showMenu = ref(false);
 
-    function toggleNav(showMenu = !showMenu.value){ 
-        return { showMenu, toggleNav };
+    function toggleNav(){ 
+      showMenu.value = !showMenu.value
     }
 
     function logout() {
@@ -74,6 +74,6 @@
 
 <style>
   .navbar {
-    box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.25)
+    box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.3)
   }
 </style>

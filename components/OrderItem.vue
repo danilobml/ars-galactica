@@ -30,7 +30,7 @@
     function removeFromCart() {
     const found = cart.value.find((item) => item.title === props.title)
     if(found){
-        cart.value = cart.value.filter((item) => item.name !== props.title)
+        cart.value = cart.value.filter((item) => item.title !== props.title)
         alert('Item removed!')
     }
 }
