@@ -46,6 +46,7 @@
         >
           <li class="font-bold hover:text-indigo-400"><NuxtLink to="/">Home</NuxtLink></li>
           <li class="font-bold hover:text-indigo-400"><NuxtLink to="/about">My Bio</NuxtLink></li>
+          <li class="font-bold hover:text-indigo-400"><NuxtLink to="/gallery">Gallery</NuxtLink></li>
           <li class="font-bold hover:text-indigo-400" v-if="auth.isAuthenticated"><NuxtLink to="/profile">User</NuxtLink></li>
           <li class="font-bold hover:text-indigo-400" v-if="auth.isAuthenticated"><NuxtLink to="/cart"><div class="flex"><img src="/images/cart-icon.png" alt="cart icon"> ({{cart.length}})</div></NuxtLink></li>
           <li class="font-bold hover:text-indigo-400" v-if="auth.isAuthenticated"><span @click="logout">Logout</span></li>

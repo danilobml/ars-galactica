@@ -2,8 +2,8 @@
     <div class="container ml-20 mt-10 flex justify-center">
     <h2 v-if="cart.length<1" class="text-bold text-3xl m-5">No items selected yet</h2>
     <div v-else>
-        <h1 class="text-3xl mt-5">Order Summary:</h1>
-        <div  class="flex">
+        <h1 class="text-3xl mt-5">Cart:</h1>
+        <div  class="flex justify-items-center align-center">
             <div v-for="item in cart" :key="item.title">
                 <OrderItem :title="item.title"/>
             </div>
