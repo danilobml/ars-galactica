@@ -43,7 +43,13 @@
         SwiperSlide,
       },
       setup() {
-        const images = usePaintings()
+        const images = ref([]);
+
+        onMounted(async () => {
+	        const { allPaintings } = await GqlAllPaintings()
+          images.value = allPaintings
+        })
+        
         const onSwiper = (swiper) => {
           console.log(swiper);
         };

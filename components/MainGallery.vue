@@ -7,8 +7,21 @@
     </div>
 </template>
 
-<script setup>
-    const images = usePaintings()
+<script>
+  export default {
+    setup() {
+      const images = ref([]);
+
+      onMounted(async () => {
+        const { allPaintings } = await GqlAllPaintings()
+        images.value = allPaintings
+      })
+      
+      return {
+        images
+      };
+    },
+  };
 </script>
 
 <style scoped>

@@ -1,0 +1,19 @@
+query allPaintings {
+  allPaintings {
+    title
+    price
+    type
+    year
+    available
+  }
+}
+
+query paintingByTitle($title: String!) {
+  paintingByTitle(title: $title) {
+    title
+    price
+    type
+    year
+    available
+  }
+}
