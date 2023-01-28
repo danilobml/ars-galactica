@@ -12,7 +12,8 @@
 </template>
 
 <script setup>
-
+    const auth = useAuth()
+    onMounted(() => checkLogin(auth));
 </script>
 
 <style scoped>

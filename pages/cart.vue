@@ -2,7 +2,7 @@
     <div class="container ml-20 mt-10 flex justify-center">
     <h2 v-if="cart.length<1" class="text-bold text-3xl m-5">No items selected yet</h2>
     <div v-else>
-        <h1 class="text-3xl mt-5">Cart:</h1>
+        <h1 class="text-3xl mt-5">Order:</h1>
         <div  class="flex justify-items-center align-center">
             <div v-for="item in cart" :key="item.title">
                 <OrderItem :title="item.title"/>
@@ -14,6 +14,10 @@
 </template>
 
 <script setup>
+   const auth = useAuth()
+   
+   onMounted(() => checkLogin(auth));
+   
    const cart = useCart()
 
 // TODO: Total Price

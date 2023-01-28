@@ -82,11 +82,12 @@ const {data, error} = await useFetch(url, {
 isLoading.value = false
 
 if(error.value) {
-_error.value = error.value.data.error
-return
+  _error.value = error.value.data.error
+  return
 } else {
-navigateTo('/')
-auth.value.isAuthenticated = true
+  navigateTo('/')
+  auth.value.isAuthenticated = true
+  localStorage.setItem('ARS_GALACTICA_USER', JSON.stringify(form))
 }
 
 }

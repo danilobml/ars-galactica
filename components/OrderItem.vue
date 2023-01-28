@@ -10,7 +10,7 @@
       <p class="text-md font-bold tracking-tight text-black leading-6"> Final price: {{price}} €</p>
       <div class="flex flex-col">
             <button @click="removeFromCart" class="p-3 bg-indigo-700 fs-md text-white rounded-md mt-3 w-44 h-12">Remove from cart</button>
-        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -43,6 +43,10 @@
     if(object){
         cart.value = cart.value.filter((item) => item.title !== props.title)
         alert('Item removed!')
+    }
+
+    function onBuy() {
+
     }
 }
 </script>
