@@ -21,6 +21,7 @@
    const cart = useCart()
 
 // TODO: Total Price
+// TODO: Make Cart persist in Local storage
 </script>
 
 <style scoped>

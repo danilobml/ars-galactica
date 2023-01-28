@@ -47,9 +47,9 @@
           <li class="font-bold hover:text-indigo-400"><NuxtLink to="/">Home</NuxtLink></li>
           <li class="font-bold hover:text-indigo-400"><NuxtLink to="/about">Artist Bio</NuxtLink></li>
           <li class="font-bold hover:text-indigo-400"><NuxtLink to="/gallery">Gallery</NuxtLink></li>
-          <li class="font-bold hover:text-indigo-400" v-if="auth.isAuthenticated"><NuxtLink to="/profile">User</NuxtLink></li>
+          <li class="font-bold hover:text-indigo-400" v-if="auth.isAuthenticated"><NuxtLink to="/profile"><img src="/images/icon-user.png" alt="user icon"></NuxtLink></li>
           <li class="font-bold hover:text-indigo-400" v-if="auth.isAuthenticated"><NuxtLink to="/cart"><div class="flex"><img src="/images/cart-icon.png" alt="cart icon"> ({{cart.length}})</div></NuxtLink></li>
-          <li class="font-bold hover:text-indigo-400" v-if="auth.isAuthenticated"><span @click="logout">Logout</span></li>
+          <li class="font-bold hover:text-indigo-400" v-if="auth.isAuthenticated"><span class="logout" @click="logout">Logout</span></li>
           <li class="font-bold hover:text-indigo-400" v-else><NuxtLink to="/login">Login</NuxtLink></li>
         </ul>
       </nav>
@@ -78,5 +78,8 @@
 <style>
   .navbar {
     box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.3)
+  }
+  .logout {
+    cursor: pointer;
   }
 </style>

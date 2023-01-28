@@ -63,7 +63,7 @@
 const isLoading = ref(false)
 const _error = ref(null)
 const auth = useAuth()
-const url = "https://reqres.in/api/login"
+const loginData = ref({})
 
 const form = reactive({
   email: "",
@@ -71,25 +71,24 @@ const form = reactive({
 })
 
 async function onSubmit() {
-if(isLoading.value) return
+  if(isLoading.value) return
 
-isLoading.value = true
-const {data, error} = await useFetch(url, {
-  method: 'post',
-  body: form
-})
+  isLoading.value = true
+  
+  async function handleLogin(email, password) {
+    const result = await GqlUserByEmail({email: email})
+    if(result && result?.userByEmail?.password === password) {
+      auth.value.isAuthenticated = true
+      localStorage.setItem('ARS_GALACTICA_USER', JSON.stringify(result))
+      navigateTo('/')
+    } else {
+      _error.value = "Email and/or password incorrect."
+    } 
+  }
 
+  handleLogin(form.email, form.password)
+  
 isLoading.value = false
-
-if(error.value) {
-  _error.value = error.value.data.error
-  return
-} else {
-  navigateTo('/')
-  auth.value.isAuthenticated = true
-  localStorage.setItem('ARS_GALACTICA_USER', JSON.stringify(form))
-}
-
 }
 
 </script>

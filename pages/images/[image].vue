@@ -4,7 +4,7 @@
         <h1 class="text-3xl font-bold text-black mt-3">{{title}}</h1>
         <h2 class="text-xl text-black mt-1">{{object.type}}</h2>
         <h2 class="text-xl font-bold text-black mt-1">Price: {{object.price}}€ </h2>
-        <button v-if="auth.isAuthenticated" @click="addToCart" class="p-3 bg-indigo-700 text-black font-bold rounded-md mt-3 w-48 h-12">Buy (add to cart)</button>
+        <button v-if="auth.isAuthenticated" @click="addToCart" class="p-3 bg-indigo-700 text-black font-bold rounded-md mt-3 w-48 h-12">Add to cart</button>
     </div>
 </template>
 
@@ -22,7 +22,7 @@
     onMounted(async () => {
         const { paintingByTitle } = await GqlPaintingByTitle({title: painting})
         object.value = paintingByTitle
-        console.log(paintingByTitle)
+        checkLogin(auth)
       })
     
     const cart = useCart()
